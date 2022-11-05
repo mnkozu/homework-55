@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Ingredients from "./components/Ingredients/Ingredients";
+import Burger from "./components/Burger/Burger";
 import './App.css';
 
-function App() {
+import meatIMG from './assets/meat.png';
+import cheeseIMG from './assets/cheese.png';
+import saladIMG from './assets/salad.png';
+import baconIMG from './assets/bacon.png';
+
+const INGREDIENTS = [
+  {name: 'Meat', price: 50, image: meatIMG},
+  {name: 'Cheese', price: 20, image: cheeseIMG},
+  {name: 'Salad', price: 5, image: saladIMG},
+  {name: 'Bacon', price: 30, image: baconIMG}
+];
+
+const App = () => {
+  const [ingredients, setIngredients] = useState([
+    {name: 'Meat', count: 0},
+    {name: 'Cheese', count: 0},
+    {name: 'Salad', count: 0},
+    {name: 'Bacon', count: 0}
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="BurgerBuilderHeader">
+        <h1 className="BurgerBuilderTitle">Burger Builder</h1>
+      </div>
+      <div className="Container">
+        <div className="MainBlock">
+          <Ingredients/>
+          <Burger/>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,23 @@
+.EveryIngBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.IngName {
+  margin: 10px;
+}
+
+.IngDeleteButton {
+  border: none;
+  border-radius: 5px;
+  background: #ff8000;
+  color: white;
+  padding: 5px 10px;
+}
+.IngIMG {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
