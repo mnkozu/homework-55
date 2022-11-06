@@ -3,6 +3,7 @@ import './Burger.css';
 
 interface PersonProps extends React.PropsWithChildren {
   ingredients: {name: string, key: number}[];
+  orderSum: number,
 }
 
 const Burger: React.FC<PersonProps> = props => {
@@ -21,7 +22,7 @@ const Burger: React.FC<PersonProps> = props => {
         })}
       <div className="BreadBottom"></div>
     </div>
-    <div>Price:</div>
+    <div className="Price">Price:<span className="PriceNum">{props.orderSum} kgs</span></div>
     </div>
    );
 };

@@ -10,10 +10,10 @@ import saladIMG from './assets/salad.png';
 import baconIMG from './assets/bacon.png';
 
 const INGREDIENTS: Ingredient[] = [
-  {name: 'Meat', price: 50, image: meatIMG},
-  {name: 'Cheese', price: 20, image: cheeseIMG},
-  {name: 'Salad', price: 5, image: saladIMG},
-  {name: 'Bacon', price: 30, image: baconIMG}
+  {name: 'Meat', price: 80, image: meatIMG},
+  {name: 'Cheese', price: 50, image: cheeseIMG},
+  {name: 'Salad', price: 10, image: saladIMG},
+  {name: 'Bacon', price: 60, image: baconIMG}
 ];
 
 const App = () => {
@@ -62,6 +62,15 @@ const App = () => {
     }));
   };
 
+  const price = () => {
+      let sum = 30;
+      for (let i = 0; i < ingredients.length; i++) {
+        const sumOfOne = INGREDIENTS[i].price * ingredients[i].count;
+        sum += sumOfOne;
+      }
+      return sum;
+  };
+
   return (
     <div className="App">
       <div className="BurgerBuilderHeader">
@@ -75,7 +84,10 @@ const App = () => {
             onAdd={(index)=> addIng(index)}
             onDel={(index)=> delIng(index)}
           />
-          <Burger ingredients={burgerComponents()}/>
+          <Burger
+            ingredients={burgerComponents()}
+            orderSum={price()}
+          />
         </div>
       </div>
     </div>

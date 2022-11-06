@@ -121,6 +121,18 @@
     font-size: 1.2rem;
 }
 
+.Price {
+    text-align: center;
+    border: 2px solid #b24c0e;
+    margin: 10px 0;
+    padding: 5px 0;
+}
+
+.PriceNum {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
 @media (min-width: 1000px) and (min-height: 700px) {
     .Burger {
         width: 700px;
